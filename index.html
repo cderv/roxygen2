@@ -36,6 +36,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -48,7 +50,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">roxygen2</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">7.1.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">7.1.1.9001</span>
       </span>
     </div>
 
@@ -61,7 +63,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -82,7 +84,7 @@
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
      
     <span class="caret"></span>
@@ -90,25 +92,26 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Release notes</li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/">Version 7.1.0</a>
+      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">Version 7.1.0</a>
     </li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/">Version 7.0.0</a>
+      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/" class="external-link">Version 7.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/">Version 6.0.0</a>
+      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/" class="external-link">Version 6.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/">Version 5.0.0</a>
+      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/" class="external-link">Version 5.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/">Version 4.0.1</a>
+      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/" class="external-link">Version 4.0.1</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/">Version 3.0.0</a>
+      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/" class="external-link">Version 3.0.0</a>
     </li>
     <li class="divider">
-    <li>
+    </li>
+<li>
       <a href="news/index.html">Change log</a>
     </li>
   </ul>
@@ -116,7 +119,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/r-lib/roxygen2/">
+  <a href="https://github.com/r-lib/roxygen2/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -133,28 +136,27 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="roxygen2-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#roxygen2-" class="anchor"></a>roxygen2 <img src="reference/figures/logo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="roxygen2-">roxygen2 <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#roxygen2-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p>The premise of roxygen2 is simple: describe your functions in comments next to their definitions and roxygen2 will process your source code and comments to automatically generate <code>.Rd</code> files in <code>man/</code>, <code>NAMESPACE</code>, and, if needed, the <code>Collate</code> field in <code>DESCRIPTION</code>.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install devtools from CRAN</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"roxygen2"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"roxygen2"</span><span class="op">)</span>
 
 <span class="co"># Or the development version from GitHub:</span>
 <span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"r-lib/roxygen2"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"r-lib/roxygen2"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<p>The premise of roxygen2 is simple: describe your functions in comments next to their definitions and roxygen2 will process your source code and comments to produce Rd files in the <code>man/</code> directory. Here’s a <a href="https://stringr.tidyverse.org/reference/str_length.html">simple example</a> from the stringr package:</p>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>The premise of roxygen2 is simple: describe your functions in comments next to their definitions and roxygen2 will process your source code and comments to produce Rd files in the <code>man/</code> directory. Here’s a <a href="https://stringr.tidyverse.org/reference/str_length.html" class="external-link">simple example</a> from the stringr package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#' The length of a string</span>
 <span class="co">#'</span>
@@ -175,11 +177,11 @@
 <span class="co">#' str_length(c("i", "like", "programming", NA))</span>
 <span class="va">str_length</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">string</span><span class="op">)</span> <span class="op">{</span>
 <span class="op">}</span></code></pre></div>
-<p>When you <code><a href="reference/roxygenize.html">roxygenise()</a></code> (or <code><a href="https://devtools.r-lib.org//reference/document.html">devtools::document()</a></code>) your package these comments will be automatically transformed to the <code>.Rd</code> that R uses to generate the documentation you see when you type <code>?str_length</code>.</p>
+<p>When you <code><a href="reference/roxygenize.html">roxygenise()</a></code> (or <code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code>) your package these comments will be automatically transformed to the <code>.Rd</code> that R uses to generate the documentation you see when you type <code>?str_length</code>.</p>
 </div>
-<div id="learn-more" class="section level2">
-<h2 class="hasAnchor">
-<a href="#learn-more" class="anchor"></a>Learn more</h2>
+<div class="section level2">
+<h2 id="learn-more">Learn more<a class="anchor" aria-label="anchor" href="#learn-more"></a>
+</h2>
 <p>To get started, first read <code><a href="articles/roxygen2.html">vignette("roxygen2")</a></code>. Then read more about the specific package component that you want to generate:</p>
 <ul>
 <li>For <code>.Rd</code> documentation files, read <code><a href="articles/rd.html">vignette("rd")</a></code>.</li>
@@ -192,55 +194,63 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=roxygen2">https://​cloud.r-project.org/​package=roxygen2</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/r-lib/roxygen2/">https://​github.com/​r-lib/​roxygen2/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/r-lib/roxygen2/issues">https://​github.com/​r-lib/​roxygen2/​issues</a>
-</li>
-<li>Learn more at <br><a href="https://r-pkgs.org/man.html">https://​r-pkgs.org/​man.html</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>
-<a href="http://hadley.nz">Hadley Wickham</a> <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-4757-117X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Peter Danenberg <br><small class="roles"> Author, copyright holder </small>  </li>
-<li>Gábor Csárdi <br><small class="roles"> Author </small>  </li>
-<li>Manuel Eugster <br><small class="roles"> Author, copyright holder </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=roxygen2" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/r-lib/roxygen2/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/r-lib/roxygen2/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://r-pkgs.org/man.html" class="external-link">Learn more</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=roxygen2"><img src="https://www.r-pkg.org/badges/version/roxygen2" alt="CRAN status"></a></li>
-<li><a href="https://github.com/r-lib/roxygen2/actions"><img src="https://github.com/r-lib/roxygen2/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://codecov.io/gh/r-lib/roxygen2?branch=master"><img src="https://codecov.io/gh/r-lib/roxygen2/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing roxygen2</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Hadley Wickham <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-4757-117X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Peter Danenberg <br><small class="roles"> Author, copyright holder </small>  </li>
+<li>Gábor Csárdi <br><small class="roles"> Author </small>  </li>
+<li>Manuel Eugster <br><small class="roles"> Author, copyright holder </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://CRAN.R-project.org/package=roxygen2" class="external-link"><img src="https://www.r-pkg.org/badges/version/roxygen2" alt="CRAN status"></a></li>
+<li><a href="https://github.com/r-lib/roxygen2/actions" class="external-link"><img src="https://github.com/r-lib/roxygen2/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/r-lib/roxygen2?branch=master" class="external-link"><img src="https://codecov.io/gh/r-lib/roxygen2/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://hadley.nz">Hadley Wickham</a>, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
+  <p></p>
+<p>Developed by Hadley Wickham, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -248,6 +258,8 @@
 
   
 
+
+  
 
   </body>
 </html>

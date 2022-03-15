@@ -32,6 +32,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -44,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">roxygen2</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">7.1.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">7.1.1.9001</span>
       </span>
     </div>
 
@@ -57,7 +59,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -78,7 +80,7 @@
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
      
     <span class="caret"></span>
@@ -86,25 +88,26 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Release notes</li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/">Version 7.1.0</a>
+      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">Version 7.1.0</a>
     </li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/">Version 7.0.0</a>
+      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/" class="external-link">Version 7.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/">Version 6.0.0</a>
+      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/" class="external-link">Version 6.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/">Version 5.0.0</a>
+      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/" class="external-link">Version 5.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/">Version 4.0.1</a>
+      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/" class="external-link">Version 4.0.1</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/">Version 3.0.0</a>
+      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/" class="external-link">Version 3.0.0</a>
     </li>
     <li class="divider">
-    <li>
+    </li>
+<li>
       <a href="../news/index.html">Change log</a>
     </li>
   </ul>
@@ -112,7 +115,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/r-lib/roxygen2/">
+  <a href="https://github.com/r-lib/roxygen2/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -133,33 +136,33 @@
       <h1 data-toc-skip>Extending roxygen2</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/r-lib/roxygen2/blob/master/vignettes/extending.Rmd"><code>vignettes/extending.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-lib/roxygen2/blob/HEAD/vignettes/extending.Rmd" class="external-link"><code>vignettes/extending.Rmd</code></a></small>
       <div class="hidden name"><code>extending.Rmd</code></div>
 
     </div>
 
     
     
-<div id="basics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#basics" class="anchor"></a>Basics</h2>
+<div class="section level2">
+<h2 id="basics">Basics<a class="anchor" aria-label="anchor" href="#basics"></a>
+</h2>
 <p>Roxygen is extensible with user-defined <strong>roclets</strong>. It means that you can take advantage of Roxygen’s parser and extend it with your own <code>@tags</code>.</p>
 <p>There are two primary ways to extend roxygen2:</p>
 <ul>
 <li><p>Add new tag that generates a new top-level section in <code>.Rd</code> files.</p></li>
 <li><p>Add a new roclet that does anything you like.</p></li>
 </ul>
-<p>This vignette will introduce you to the key data structures in roxygen2, and then show you how to use these two extension points. This vignette is very rough, so you should expect to have to also read some roxygen2 source code to understand all the extension points. Hopefully it’s useful enough to help you get started, and if you have problems, please <a href="https://github.com/r-lib/roxygen2/issues/new">file an issue</a>!</p>
+<p>This vignette will introduce you to the key data structures in roxygen2, and then show you how to use these two extension points. This vignette is very rough, so you should expect to have to also read some roxygen2 source code to understand all the extension points. Hopefully it’s useful enough to help you get started, and if you have problems, please <a href="https://github.com/r-lib/roxygen2/issues/new" class="external-link">file an issue</a>!</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://roxygen2.r-lib.org/">roxygen2</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://roxygen2.r-lib.org/">roxygen2</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="key-data-structures" class="section level2">
-<h2 class="hasAnchor">
-<a href="#key-data-structures" class="anchor"></a>Key data structures</h2>
+<div class="section level2">
+<h2 id="key-data-structures">Key data structures<a class="anchor" aria-label="anchor" href="#key-data-structures"></a>
+</h2>
 <p>Before we talk about extending roxygen2, we need to first discuss two important data structures that power roxygen: tags and blocks.</p>
-<div id="tags" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tags" class="anchor"></a>Tags</h3>
+<div class="section level3">
+<h3 id="tags">Tags<a class="anchor" aria-label="anchor" href="#tags"></a>
+</h3>
 <p>A tag (a list with S3 class <code>roxy_tag</code>) represents a single tag. It has the following fields:</p>
 <ul>
 <li><p><code>tag</code>: the name of the tag.</p></li>
@@ -171,7 +174,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/roxy_tag.html">roxy_tag</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"Hadley"</span><span class="op">)</span>
 <span class="co">#&gt; [????:???] @name 'Hadley' {unparsed}</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/roxy_tag.html">roxy_tag</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"Hadley"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/roxy_tag.html">roxy_tag</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"Hadley"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; List of 5</span>
 <span class="co">#&gt;  $ file: chr NA</span>
 <span class="co">#&gt;  $ line: int NA</span>
@@ -181,9 +184,9 @@
 <span class="co">#&gt;  - attr(*, "class")= chr [1:2] "roxy_tag_name" "roxy_tag"</span></code></pre></div>
 <p>However, you should rarely need to do so, because you’ll typically have them given to you in a block object, as you’ll see shortly.</p>
 </div>
-<div id="blocks" class="section level3">
-<h3 class="hasAnchor">
-<a href="#blocks" class="anchor"></a>Blocks</h3>
+<div class="section level3">
+<h3 id="blocks">Blocks<a class="anchor" aria-label="anchor" href="#blocks"></a>
+</h3>
 <p>A block (a list with S3 class <code>roxy_block</code>) represents a single roxygen block. It has the following fields:</p>
 <ul>
 <li>
@@ -225,9 +228,9 @@
 <span class="co">#&gt;     $alias f</span></code></pre></div>
 </div>
 </div>
-<div id="adding-a-new--rd-tag" class="section level2">
-<h2 class="hasAnchor">
-<a href="#adding-a-new--rd-tag" class="anchor"></a>Adding a new <code>.Rd</code> tag</h2>
+<div class="section level2">
+<h2 id="adding-a-new--rd-tag">Adding a new <code>.Rd</code> tag<a class="anchor" aria-label="anchor" href="#adding-a-new--rd-tag"></a>
+</h2>
 <p>The easiest way to extend roxygen2 is to create a new tag that adds output to <code>.Rd</code> files. This requires two steps:</p>
 <ol style="list-style-type: decimal">
 <li><p>Define a <code><a href="../reference/roxy_tag.html">roxy_tag_parse()</a></code> method that describes how to parse our new tag.</p></li>
@@ -277,7 +280,7 @@
 <span class="co">#&gt;     $topic f</span>
 <span class="co">#&gt;     $alias f</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">block</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">block</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
 <span class="co">#&gt; List of 5</span>
 <span class="co">#&gt;  $ file: chr "&lt;text&gt;"</span>
 <span class="co">#&gt;  $ line: int 4</span>
@@ -291,14 +294,14 @@
 <code class="sourceCode R"><span class="va">roxy_tag_rd.roxy_tag_tip</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">base_path</span>, <span class="va">env</span><span class="op">)</span> <span class="op">{</span>
   <span class="fu"><a href="../reference/rd_section.html">rd_section</a></span><span class="op">(</span><span class="st">"tip"</span>, <span class="va">x</span><span class="op">$</span><span class="va">val</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<p>This additional layer is needed because there can multiple tags of the same time in a single block, and multiple blocks can contribute to the same <code>.Rd</code> file. The job of the <code>rd_section</code> is to combine all the tags into a single top-level Rd section. Each tag generates an <code>rd_section</code> which is then combined with any previous section using <code><a href="https://rdrr.io/r/base/merge.html">merge()</a></code>. The default <code>merge.rd_section()</code> just concatenates the values together (<code><a href="../reference/rd_section.html">rd_section(x$type, c(x$value, y$value))</a></code>); you can override this method if you need more sophisticated behaviour.</p>
-<p>We then need to define a <code><a href="https://rdrr.io/r/base/format.html">format()</a></code> method to converts this object into text for the <code>.Rd</code> file:</p>
+<p>This additional layer is needed because there can multiple tags of the same time in a single block, and multiple blocks can contribute to the same <code>.Rd</code> file. The job of the <code>rd_section</code> is to combine all the tags into a single top-level Rd section. Each tag generates an <code>rd_section</code> which is then combined with any previous section using <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code>. The default <code>merge.rd_section()</code> just concatenates the values together (<code>rd_section(x$type, c(x$value, y$value))</code>); you can override this method if you need more sophisticated behaviour.</p>
+<p>We then need to define a <code><a href="https://rdrr.io/r/base/format.html" class="external-link">format()</a></code> method to converts this object into text for the <code>.Rd</code> file:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">format.rd_section_tip</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span>
     <span class="st">"\\section{Tips and tricks}{\n"</span>,
     <span class="st">"\\itemize{\n"</span>,
-    <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"  \\item "</span>, <span class="va">x</span><span class="op">$</span><span class="va">value</span>, <span class="st">"\n"</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"  \\item "</span>, <span class="va">x</span><span class="op">$</span><span class="va">value</span>, <span class="st">"\n"</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span>,
     <span class="st">"}\n"</span>,
     <span class="st">"}\n"</span>
   <span class="op">)</span>
@@ -316,13 +319,13 @@
 <span class="co">#&gt; </span></code></pre></div>
 <p>Note that there is no namespacing so if you’re defining multiple new tags I recommend using your package name as common prefix.</p>
 </div>
-<div id="creating-a-new-roclet" class="section level2">
-<h2 class="hasAnchor">
-<a href="#creating-a-new-roclet" class="anchor"></a>Creating a new roclet</h2>
+<div class="section level2">
+<h2 id="creating-a-new-roclet">Creating a new roclet<a class="anchor" aria-label="anchor" href="#creating-a-new-roclet"></a>
+</h2>
 <p>Creating a new roclet is usually a two part process. First, you define new tags that your roclet will work with. Second, you define a roclet that tells roxygen how to process an entire package.</p>
-<div id="custom-tags" class="section level3">
-<h3 class="hasAnchor">
-<a href="#custom-tags" class="anchor"></a>Custom tags</h3>
+<div class="section level3">
+<h3 id="custom-tags">Custom tags<a class="anchor" aria-label="anchor" href="#custom-tags"></a>
+</h3>
 <p>In this example we will make a new <code>@memo</code> tag to enable printing the memos at the console when the roclet runs. We choose that the <code>@memo</code> has this syntax:</p>
 <pre><code>@memo [Headline] Description</code></pre>
 <p>As an example:</p>
@@ -330,14 +333,14 @@
 <p>As above, we first define a parse method:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">roxy_tag_parse.roxy_tag_memo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^\\[.*\\].*$"</span>, <span class="va">x</span><span class="op">$</span><span class="va">raw</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^\\[.*\\].*$"</span>, <span class="va">x</span><span class="op">$</span><span class="va">raw</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
     <span class="fu"><a href="../reference/roxy_tag.html">roxy_tag_warning</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"Invalid memo format"</span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">}</span>
 
-  <span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu">stringi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringi/man/stri_match.html">stri_match</a></span><span class="op">(</span>str <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">raw</span>, regex <span class="op">=</span> <span class="st">"\\[(.*)\\](.*)"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
+  <span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu">stringi</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stringi/man/stri_match.html" class="external-link">stri_match</a></span><span class="op">(</span>str <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">raw</span>, regex <span class="op">=</span> <span class="st">"\\[(.*)\\](.*)"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
 
-  <span class="va">x</span><span class="op">$</span><span class="va">val</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+  <span class="va">x</span><span class="op">$</span><span class="va">val</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
     header <span class="op">=</span> <span class="va">parsed</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, 
     message <span class="op">=</span> <span class="va">parsed</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span>
   <span class="op">)</span>
@@ -366,7 +369,7 @@
 <span class="co">#&gt;     $topic f</span>
 <span class="co">#&gt;     $alias f</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">block</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">block</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
 <span class="co">#&gt; List of 5</span>
 <span class="co">#&gt;  $ file: chr "&lt;text&gt;"</span>
 <span class="co">#&gt;  $ line: int 2</span>
@@ -377,9 +380,9 @@
 <span class="co">#&gt;   ..$ message: chr " Remember to implement this!"</span>
 <span class="co">#&gt;  - attr(*, "class")= chr [1:2] "roxy_tag_memo" "roxy_tag"</span></code></pre></div>
 </div>
-<div id="the-roclet" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-roclet" class="anchor"></a>The roclet</h3>
+<div class="section level3">
+<h3 id="the-roclet">The roclet<a class="anchor" aria-label="anchor" href="#the-roclet"></a>
+</h3>
 <p>Next we create a constructor for the roclet, which uses <code><a href="../reference/roclet.html">roclet()</a></code>. Our <code>memo</code> roclet doesn’t have any options so this is very simple:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">memo_roclet</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -393,14 +396,14 @@
 <p>For this roclet, we’ll have <code><a href="../reference/roclet.html">roclet_process()</a></code> collect all the memo tags into a named list:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">roclet_process.roclet_memo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">blocks</span>, <span class="va">env</span>, <span class="va">base_path</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>
   
   <span class="kw">for</span> <span class="op">(</span><span class="va">block</span> <span class="kw">in</span> <span class="va">blocks</span><span class="op">)</span> <span class="op">{</span>
     <span class="va">tags</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/roxy_block.html">block_get_tags</a></span><span class="op">(</span><span class="va">block</span>, <span class="st">"memo"</span><span class="op">)</span>
 
     <span class="kw">for</span> <span class="op">(</span><span class="va">tag</span> <span class="kw">in</span> <span class="va">tags</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">msg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"["</span>, <span class="va">tag</span><span class="op">$</span><span class="va">file</span>, <span class="st">":"</span>, <span class="va">tag</span><span class="op">$</span><span class="va">line</span>, <span class="st">"] "</span>, <span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">message</span><span class="op">)</span>
-      <span class="va">results</span><span class="op">[[</span><span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">header</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">results</span><span class="op">[[</span><span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">header</span><span class="op">]</span><span class="op">]</span>, <span class="va">msg</span><span class="op">)</span>
+      <span class="va">msg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"["</span>, <span class="va">tag</span><span class="op">$</span><span class="va">file</span>, <span class="st">":"</span>, <span class="va">tag</span><span class="op">$</span><span class="va">line</span>, <span class="st">"] "</span>, <span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">message</span><span class="op">)</span>
+      <span class="va">results</span><span class="op">[[</span><span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">header</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">results</span><span class="op">[[</span><span class="va">tag</span><span class="op">$</span><span class="va">val</span><span class="op">$</span><span class="va">header</span><span class="op">]</span><span class="op">]</span>, <span class="va">msg</span><span class="op">)</span>
     <span class="op">}</span>
   <span class="op">}</span>
   
@@ -409,13 +412,13 @@
 <p>And then have <code><a href="../reference/roclet.html">roclet_output()</a></code> just print them to the screen:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">roclet_output.roclet_memo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">results</span>, <span class="va">base_path</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">for</span> <span class="op">(</span><span class="va">header</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">for</span> <span class="op">(</span><span class="va">header</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
     <span class="va">messages</span> <span class="op">&lt;-</span> <span class="va">results</span><span class="op">[[</span><span class="va">header</span><span class="op">]</span><span class="op">]</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">header</span>, <span class="st">": "</span>, <span class="st">"\n"</span><span class="op">)</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">" * "</span>, <span class="va">messages</span>, <span class="st">"\n"</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">header</span>, <span class="st">": "</span>, <span class="st">"\n"</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">" * "</span>, <span class="va">messages</span>, <span class="st">"\n"</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span>
   <span class="op">}</span>
 
-  <span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>Then you can test it works by using <code><a href="../reference/roc_proc_text.html">roc_proc_text()</a></code>:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
@@ -452,11 +455,13 @@ g &lt;- function(x, y) {
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://hadley.nz">Hadley Wickham</a>, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
+  <p></p>
+<p>Developed by Hadley Wickham, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -464,6 +469,8 @@ g &lt;- function(x, y) {
 
   
 
+
+  
 
   </body>
 </html>

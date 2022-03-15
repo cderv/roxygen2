@@ -32,6 +32,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -44,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">roxygen2</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">7.1.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">7.1.1.9001</span>
       </span>
     </div>
 
@@ -57,7 +59,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -78,7 +80,7 @@
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
      
     <span class="caret"></span>
@@ -86,25 +88,26 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Release notes</li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/">Version 7.1.0</a>
+      <a href="https://www.tidyverse.org/blog/2020/03/roxygen2-7-1-0/" class="external-link">Version 7.1.0</a>
     </li>
     <li>
-      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/">Version 7.0.0</a>
+      <a href="https://www.tidyverse.org/blog/2019/11/roxygen2-7-0-0/" class="external-link">Version 7.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/">Version 6.0.0</a>
+      <a href="https://blog.rstudio.com/2017/02/01/roxygen2-6-0-0/" class="external-link">Version 6.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/">Version 5.0.0</a>
+      <a href="https://blog.rstudio.com/2015/10/29/roxygen2-5-0-0/" class="external-link">Version 5.0.0</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/">Version 4.0.1</a>
+      <a href="https://blog.rstudio.com/2014/05/19/roxygen2-4-0-1/" class="external-link">Version 4.0.1</a>
     </li>
     <li>
-      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/">Version 3.0.0</a>
+      <a href="https://blog.rstudio.com/2013/12/09/roxygen2-3-0-0/" class="external-link">Version 3.0.0</a>
     </li>
     <li class="divider">
-    <li>
+    </li>
+<li>
       <a href="../news/index.html">Change log</a>
     </li>
   </ul>
@@ -112,7 +115,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/r-lib/roxygen2/">
+  <a href="https://github.com/r-lib/roxygen2/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -133,7 +136,7 @@
       <h1 data-toc-skip>Introduction to roxygen2</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/r-lib/roxygen2/blob/master/vignettes/roxygen2.Rmd"><code>vignettes/roxygen2.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/r-lib/roxygen2/blob/HEAD/vignettes/roxygen2.Rmd" class="external-link"><code>vignettes/roxygen2.Rmd</code></a></small>
       <div class="hidden name"><code>roxygen2.Rmd</code></div>
 
     </div>
@@ -153,20 +156,20 @@
 <li><p><a href="namespace.html">Managing your <code>NAMESPACE</code></a> describes how to generate a <code>NAMESPACE</code> file, how namespacing works in R, and how you can use Roxygen2 to be specific about what your package needs and supplies.</p></li>
 <li><p>See [update_collate()] for the details of <code>@include</code>, which for complicated reasons is not implemented as a roclet.</p></li>
 </ul>
-<div id="running-roxygen" class="section level2">
-<h2 class="hasAnchor">
-<a href="#running-roxygen" class="anchor"></a>Running roxygen</h2>
+<div class="section level2">
+<h2 id="running-roxygen">Running roxygen<a class="anchor" aria-label="anchor" href="#running-roxygen"></a>
+</h2>
 <p>There are three main ways to run roxygen:</p>
 <ul>
 <li><p><code><a href="../reference/roxygenize.html">roxygen2::roxygenise()</a></code>.</p></li>
-<li><p><code><a href="https://devtools.r-lib.org//reference/document.html">devtools::document()</a></code>.</p></li>
+<li><p><code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code>.</p></li>
 <li><p><code>Ctrl + Shift + D</code>, if you’re using RStudio.</p></li>
 </ul>
 <p>You can mix handwritten Rd and roxygen2; roxygen2 will never overwrite a file it didn’t create.</p>
 </div>
-<div id="basic-process" class="section level2">
-<h2 class="hasAnchor">
-<a href="#basic-process" class="anchor"></a>Basic process</h2>
+<div class="section level2">
+<h2 id="basic-process">Basic process<a class="anchor" aria-label="anchor" href="#basic-process"></a>
+</h2>
 <p>There are three steps in the transformation from roxygen comments in your source file to human readable documentation:</p>
 <ol style="list-style-type: decimal">
 <li>You add roxygen comments to your source file.</li>
@@ -210,11 +213,11 @@ Add together two numbers
 add(1, 1)
 add(10, 1)
 }</code></pre>
-<p>Rd files are a special file format loosely based on LaTeX. You can read more about the Rd format in the <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Rd-format">R extensions</a> manual. With roxygen2, there are few reasons to know about Rd files, so here I’ll avoid discussing them as much as possible, focussing instead on what you need to know about roxygen2.</p>
-<p>When you use <code>?x</code>, <code>help("x")</code> or <code><a href="https://rdrr.io/r/utils/example.html">example("x")</a></code> R looks for an Rd file containing <code>\alias{x}</code>. It then parses the file, converts it into html and displays it. These functions look for an Rd file in <em>installed</em> packages. This isn’t very useful for package development, because you want to use the <code>.Rd</code> files in the <em>source</em> package. For this reason, we recommend that you use roxygen2 in conjunction with devtools: <code><a href="https://devtools.r-lib.org//reference/load_all.html">devtools::load_all()</a></code> automatically adds shims so that <code><a href="https://rdrr.io/r/utils/Question.html">?</a></code> and friends will look in the development package. Note, however, that this preview does not work with intra-package links. To preview those, you’ll need to install the package. If you use RStudio, the easiest way to do this is to click the “Build &amp; Reload button”.</p>
-<div id="rcpp" class="section level3">
-<h3 class="hasAnchor">
-<a href="#rcpp" class="anchor"></a>Rcpp</h3>
+<p>Rd files are a special file format loosely based on LaTeX. You can read more about the Rd format in the <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Rd-format" class="external-link">R extensions</a> manual. With roxygen2, there are few reasons to know about Rd files, so here I’ll avoid discussing them as much as possible, focussing instead on what you need to know about roxygen2.</p>
+<p>When you use <code>?x</code>, <code>help("x")</code> or <code>example("x")</code> R looks for an Rd file containing <code>\alias{x}</code>. It then parses the file, converts it into html and displays it. These functions look for an Rd file in <em>installed</em> packages. This isn’t very useful for package development, because you want to use the <code>.Rd</code> files in the <em>source</em> package. For this reason, we recommend that you use roxygen2 in conjunction with devtools: <code><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">devtools::load_all()</a></code> automatically adds shims so that <code>?</code> and friends will look in the development package. Note, however, that this preview does not work with intra-package links. To preview those, you’ll need to install the package. If you use RStudio, the easiest way to do this is to click the “Build &amp; Reload button”.</p>
+<div class="section level3">
+<h3 id="rcpp">Rcpp<a class="anchor" aria-label="anchor" href="#rcpp"></a>
+</h3>
 <p>You can also use roxygen2 with Rcpp. Simply include roxygen2 comments in your C++ code (using <code>//</code> instead of <code>#</code>), and Rcpp will automatically carry the comments along into <code>RcppExports.R</code> where roxygen2 will find them.</p>
 <p>For example, dplyr has <code>between.cpp</code> which starts:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">//' Do values in a numeric vector fall in specified range?</span></span>
@@ -267,11 +270,13 @@ add(10, 1)
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://hadley.nz">Hadley Wickham</a>, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
+  <p></p>
+<p>Developed by Hadley Wickham, Peter Danenberg, Gábor Csárdi, Manuel Eugster.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -279,6 +284,8 @@ add(10, 1)
 
   
 
+
+  
 
   </body>
 </html>
